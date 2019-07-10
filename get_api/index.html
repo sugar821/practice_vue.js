@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>todo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+</head>
+<body>
+    <div id="app">
+    <div v-if="loading">
+        loading...
+    </div><!-- loading -->
+    <div v-else>
+      <ul　v-cloak>
+        <li v-for="(rate, currency) in bpi">{{currency}}:{{rate.rate_float | currencyDecimal}}</li>
+      </ul>
+      <div v-if="has_error">
+        error
+      </div> <!-- error -->
+    </div>
+    </div> <!-- app -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/javascript.js"></script>
+</body>  
+</html>
