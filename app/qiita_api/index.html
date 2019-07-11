@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>todo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+</head>
+<body>
+    <div id="app">
+        <h2>todo</h2>
+            <form v-on:submit.prevent>
+                <input type="text" v-model="new_item">
+                <button v-on:click="addItem">
+                    add
+                </button>
+            </form>
+    <ul v-for="(t,index) in to_dos">
+       <oi>
+         <input type="checkbox" v-model="t.isdone">
+         <span v-bind:class="{done: t.isdone}">{{ t.item }}</span>
+         <button v-on:click="delete_item(index)">delete</button>
+      </oi>
+    </ul>
+            <!-- <pre>{{$data}}</pre> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/javascript.js"></script>
+</body>  
+</html>
